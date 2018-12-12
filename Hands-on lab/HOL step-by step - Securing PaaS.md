@@ -1175,9 +1175,9 @@ Synopsis: In this exercise, attendees will deploy a cloud web application with a
 
     >**Note**: You cannot publish from outside the Azure Virtual Network to an internal ASE.
 
-10. Open the extracted folder **\\Hands-on lab\\WebApp\\FourthCoffeeWeb.sln**.
+10. Open the extracted folder solution **\\Hands-on lab\\WebApp\\FourthCoffeeWeb.sln**.
 
-    >**Note**: You will need to provide an authorized MSDN Visual Studio licensed user.
+    >**Note**: If the project does not load, remove the project file and open the folder as an **Existing web site**.
 
     a.  Select **Sign in**, enter your username, select **Next**.
 
