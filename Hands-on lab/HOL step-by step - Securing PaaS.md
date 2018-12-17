@@ -1103,9 +1103,13 @@ Synopsis: In this exercise, attendees will learn how to migrate web application 
 
 3.  In the new window that opens, run the following commands (NOTE that these already exist in the project but are provided as a reference):
 
-    a.  Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.16.204221202.
+```PowerShell
+    Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.16.204221202.
 
-    b.  Install-Package Microsoft.Azure.KeyVault.
+    Install-Package Microsoft.Azure.KeyVault.
+
+    Update-Package -Reinstall
+```
 
 4.  From **Solution Explorer**, double-select the **web.config** file to open it.
 
@@ -1139,7 +1143,7 @@ Synopsis: In this exercise, attendees will learn how to migrate web application 
 
     ![In the global.asax.cs file, the EncryptSecret = sec.Value line is called out.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image115.png "global.asax.cs file")
 
-6.  Press **F5**, and navigate to [http://localhost:\[PORT-NUMBER\]/api/CustomerAccounts](http://localhost:[PORT-NUMBER]/api/CustomerAccounts), you should see your data displayed.
+6.  Press **F5**, and navigate to [http://localhost:\[PORT-NUMBER\]/api/CustomerAccounts](http://localhost:[PORT-NUMBER]/api/CustomerAccounts), you should see your data displayed (again note that some browsers may not display the json file in the browser).
 
 ## Exercise 6: Securing PaaS web applications with App Service Environment and Web Application Firewall 
 
