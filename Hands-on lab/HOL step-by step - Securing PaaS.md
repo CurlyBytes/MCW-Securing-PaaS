@@ -10,7 +10,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-Decemeber 2018
+December 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -263,7 +263,7 @@ In this task, you will enable multi-factor authentication on the Key Vault Admin
 
 5.  Select **Activate**.
 
-> NOTE:  A trial can only be activated once per Azure subscription tenant.  If you have already done a trial, you would need to buy a P2 license to utilize MFA in this lab.
+>**Note**:  A trial can only be activated once per Azure subscription tenant.  If you have already done a trial, you would need to buy a P2 license to utilize MFA in this lab.
 
 6.  Select **Users**, the select **All users**.
 
@@ -289,23 +289,23 @@ In this task, you will enable multi-factor authentication on the Key Vault Admin
 
 12. Attempt to sign-in as the **KeyVaultAdmin user**.
 
-> NOTE:  If you did not record the password earlier, you will need to reset the password
+>**Note**:  If you did not record the password earlier, you will need to reset the password
 
-    a. In the Azure portal, select Azure Active Directory.
+   a. In the Azure portal, select Azure Active Directory.
 
-    b.  Select Users, All Users, and select the **Key Vault Admin** user from the list.
+   b.  Select Users, All Users, and select the **Key Vault Admin** user from the list.
 
-    c.  On the Key Vault Admin user blade, select **Reset Password**.
+   c.  On the Key Vault Admin user blade, select **Reset Password**.
     
-    ![On the Key Vault Admin user blade, Reset password is highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image37.png "Reset password menu item")
+   ![On the Key Vault Admin user blade, Reset password is highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image37.png "Reset password menu item")
 
-    d.  On the Reset password blade, select **Reset password**.
+   d.  On the Reset password blade, select **Reset password**.
     
-    ![On the Reset password blade, the Reset password button is highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image38.png "Reset password blade")
+   ![On the Reset password blade, the Reset password button is highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image38.png "Reset password blade")
 
-    e.  Copy the Temporary password for use in the next step.
+   e.  Copy the Temporary password for use in the next step.
     
-    ![On the Reset password blade, a message that the password has been reset is displayed, and the Temporary password is selected and highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image39.png "Reset password blade")
+   ![On the Reset password blade, a message that the password has been reset is displayed, and the Temporary password is selected and highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image39.png "Reset password blade")
 
 14. Open an InPrivate or Incognito browser window, navigate to <http://login.microsoftonline.com> and enter the **username** and **password** for the KeyVaultAdmin account.
 
@@ -897,8 +897,8 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
 21. For the encryption, select **Azure Key Vault**, in the dialog.
 
     ![In the Generate new encryption key section, under Select the key store provider, Azure Key Vault is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image94.png "Encryption key")
-.
-22. Select **Sign In**
+
+22. Select **Sign In**.
 
 23. Sign in with your Azure Portal credentials.
 
@@ -1239,9 +1239,9 @@ Synopsis: In this exercise, attendees will deploy a cloud web application with a
 
 22. The connection should validate with a green checkmark:
 
-> NOTE: You may need to click it twice.
+>**Note**: You may need to click it twice.
 
-    ![Below the destination URL, next to the the Validation Connection button is a green checkmark, indicating that the connection was validated.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image125.png "Validation Connection")
+   ![Below the destination URL, next to the the Validation Connection button is a green checkmark, indicating that the connection was validated.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image125.png "Validation Connection")
 
 23. Record the destination URL for later in this exercise.
 
@@ -1351,7 +1351,7 @@ Synopsis: In this exercise, attendees will deploy a cloud web application with a
 
     ![A script displays in the Windows PowerShell ISE window.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image136.png "Windows PowerShell ISE window")
 
-> NOTE:  You may need to change the execution policy:
+>**Note**:  You may need to change the execution policy:
 
 ```PowerShell
     Set-ExecutionPolicy -ExecutionPolicy Unrestricted
@@ -1409,7 +1409,7 @@ Synopsis: In this exercise, attendees will learn how to use Azure Functions that
 
 5.  For **Storage**, select the storage account.
 
-6.  Select **Application Insights**, select **Enabled**, then select **Apply**
+6.  Select **Application Insights**, select **Enabled**, then select **Apply**.
 
 7.  Select **Create**.
 
