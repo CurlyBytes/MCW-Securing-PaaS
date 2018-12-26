@@ -10,7 +10,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-Decemeber 2018
+December 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -168,8 +168,8 @@ In this task, you will log into the lab VM that was created by the ARM template 
     ![The passsecurity-vm-jump option is selected.](images/Setup/image11.png "passsecurity-vm-jump option")
 
     -   Select **Connect**.
-
-    > NOTE:  Ensure the status is **Running**.  It could take up to 10 minutes for the Virtual machine to provision.
+    
+        >**Note**:  Ensure the status is **Running**.  It could take up to 10 minutes for the Virtual machine to provision.
 
     ![In the Virtual machine blade, Connect is selected.](images/Setup/image12.png "Virtual machine blade")
 
@@ -187,7 +187,7 @@ In this task, you will log into the lab VM that was created by the ARM template 
 
     ![Local Server is selected and highlighted on the left side of Server Manager, and at right, IE Enhanced Security Configuration On is highlighted under Properties For LabVM.](images/Setup/image14.png "Select IE Enhanced Security Configuration")
 
-    a.  In the Internet Explorer Enhanced Security Configuration dialog, select **Off** under Administrators, then select **OK**.
+    -   In the Internet Explorer Enhanced Security Configuration dialog, select **Off** under Administrators, then select **OK**.
 
     ![Off is selected under Administrators in the Internet Explorer Enhanced Security Configuration dialog box.](images/Setup/image15.png "Disable Administrators")
 
