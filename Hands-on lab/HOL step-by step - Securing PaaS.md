@@ -10,7 +10,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-August 2018
+December 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -189,7 +189,7 @@ In this task, you will create multiple Azure AD user accounts that will be used 
 
     b.  Select **Custom domain names**.
 
-    c.  Record the **\*.microsoftonline.com** domain name, you will use this later.
+    c.  Record the **\*.microsoftonline.com** domain name, as you will use this later.
 
 2.  Select **Users**, then select **All users**.
 
@@ -209,7 +209,9 @@ In this task, you will create multiple Azure AD user accounts that will be used 
 
     d. Select **Key Vault Mgmt Admins**, click **Select**.
 
-    e.  Select **Create**.
+    e.  Check the **Show Password** check box and copy the password to Notepad.
+
+    f.  Select **Create**.
 
 5.  Select **+New user** again.
 
@@ -225,7 +227,9 @@ In this task, you will create multiple Azure AD user accounts that will be used 
 
     d.  Select **Key Vault Mgmt Admins**, click **Select**.
 
-    e.  Select **Create**.
+    e.  Check the **Show Password** check box and copy the password to Notepad.
+
+    f.  Select **Create**.
 
 7.  Select **+New user** again.
 
@@ -237,6 +241,8 @@ In this task, you will create multiple Azure AD user accounts that will be used 
 
     >**Note**: No groups will be assigned to this user.
 
+    c.  Check the **Show Password** check box and copy the password to Notepad.
+
     d.  Select **Create**.
 
 ### Task 3: Enable Azure Identity Protection features 
@@ -245,7 +251,7 @@ In this task, you will enable multi-factor authentication on the Key Vault Admin
 
 1.  In the Azure Portal, find and select your Azure Active Directory resource.
 
-2.  Select **MFA Server**.
+2.  Select **MFA**.
 
     ![Under Security, MFA Server is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image31.png "MFA Server")
 
@@ -256,6 +262,8 @@ In this task, you will enable multi-factor authentication on the Key Vault Admin
   ![The Azure AD Premium P2 tile is selected, and Free trial is highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image32.png "Azure AD Premium P2 trial")
 
 5.  Select **Activate**.
+
+>**Note**:  A trial can only be activated once per Azure subscription tenant.  If you have already done a trial, you would need to buy a P2 license to utilize MFA in this lab.
 
 6.  Select **Users**, the select **All users**.
 
@@ -281,29 +289,31 @@ In this task, you will enable multi-factor authentication on the Key Vault Admin
 
 12. Attempt to sign-in as the **KeyVaultAdmin user**.
 
-13. In the Azure portal, select Azure Active Directory.
+>**Note**:  If you did not record the password earlier, you will need to reset the password
 
-    a.  Select Users, All Users, and select the **Key Vault Admin** user from the list.
+   a. In the Azure portal, select Azure Active Directory.
 
-    b.  On the Key Vault Admin user blade, select **Reset Password**.
+   b.  Select Users, All Users, and select the **Key Vault Admin** user from the list.
+
+   c.  On the Key Vault Admin user blade, select **Reset Password**.
     
-    ![On the Key Vault Admin user blade, Reset password is highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image37.png "Reset password menu item")
+   ![On the Key Vault Admin user blade, Reset password is highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image37.png "Reset password menu item")
 
-    c.  On the Reset password blade, select **Reset password**.
+   d.  On the Reset password blade, select **Reset password**.
     
-    ![On the Reset password blade, the Reset password button is highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image38.png "Reset password blade")
+   ![On the Reset password blade, the Reset password button is highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image38.png "Reset password blade")
 
-    d.  Copy the Temporary password for use in the next step.
+   e.  Copy the Temporary password for use in the next step.
     
-    ![On the Reset password blade, a message that the password has been reset is displayed, and the Temporary password is selected and highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image39.png "Reset password blade")
+   ![On the Reset password blade, a message that the password has been reset is displayed, and the Temporary password is selected and highlighted.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image39.png "Reset password blade")
 
 14. Open an InPrivate or Incognito browser window, navigate to <http://login.microsoftonline.com> and enter the **username** and **password** for the KeyVaultAdmin account.
 
-15. You will be prompted to setup additional security, select **Set it up now**.
+15. You will be prompted to setup additional security, select **next**.
 
-    ![On the Portal page, the Set it up now button is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image40.png "Portal page")
+    ![On the Portal page, the Set it up now button is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image40.1.png "Portal page")
 
-16. Select **Mobile app in the dropdown**.
+16. For **How should we contact you?**, select **Mobile app**.
 
     ![Under Step 1, How should we contact you, Mobile app is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image41.png "Step 1 drop-down")
 
@@ -363,23 +373,21 @@ In this task, you will create a new Azure Key Vault.
 
 1.  In your InPrivate or Incognito browser window, log into the Azure portal using the **KeyVaultAdmin** account.
 
-2.  In the Search box at the top of the Azure portal, search for "key vault" box, and select **Key vaults** from the results.
+2.  Click **Create a resource**, perform a search for **key vault**, then select **Key Vault**
 
     ![\"Key vault\" is entered In the Azure search field, and Key vaults is selected from the search results.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image49.png "Azure search box for Key Vault")
 
-3.  On the Key vaults blade, select +**Add**.
-
-    ![In the Key vaults blade top menu, the Add button is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image50.png "Key vaults blade")
+3.  In the Key Vault resource summary blade, select **Create**.
 
 4.  You should get a message that you must have admin access to create a key vault.
 
     ![In the Get an Azure subscription pop-up, a message displays saying you need admin access.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image51.png "Get an Azure subscription pop-up")
 
-5.  Return to the Azure portal browser window where you are logged in with your subscription admin account, not the Incognito window where the Key Vault Admin account is logged in.
+5.  Return to the Azure portal browser window where you are logged in with your subscription admin account, ensure it is not the Incognito window where the Key Vault Admin account is logged in.
 
-6.  As in step 2 above, search for **Key vaults** and navigate to the Key Vaults blade.
+6.  As in step 2 above, search for **Key vaults** and navigate to the Key Vault blade.
 
-7.  Select **+Add**.
+7.  Select **Create**.
 
     ![In the Key vaults blade top menu, the Add button is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image50.png "Key vaults blade")
 
@@ -409,7 +417,7 @@ In this task, you use Access control (IAM) to assign role-based access control (
 
     ![In the Azure Portal, under search results, passsecuritykeyvault.cjg is selected, as is Access control (IAM).](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image54.png "Azure Portal")
 
-3.  Select **+Add**.
+3.  Select **+Add role assignment**.
 
     ![In the Key Vault blade top menu, the Add button is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image55.png "Key Vault blade")
 
@@ -417,21 +425,21 @@ In this task, you use Access control (IAM) to assign role-based access control (
 
     a.  **Role:** Select **Key Vault Contributor**.
 
-    b.  **Assign access to**: Leave set to Azure AD user, group, or application.
+    b.  **Assign access to**: Leave set to **Azure AD user, group, or service principal**.
 
-    c. **Select**: Search for and select the **KeyVaultAdmin** user.
+    c. In the **Select** textbox, search for and select the **KeyVaultAdmin** user.
   
     ![In the Add permissions blade, the values above are entered into the specified fields.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image56.png "Add permissions blade")
 
 5.  Select **Save**.
 
-6.  Select **+Add** again.
+6.  Select **+Add role assignment** again.
 
 7.  In the Add permissions blade, enter:
 
     a.  **Role:** Select **Reader**.
 
-    b.  **Assign access to**: Leave set to Azure AD user, group, or application.
+    b.  **Assign access to**: Leave set to **Azure AD user, group, or service principal**.
 
     c.  **Select**: Search for and select the **KeyVaultAuditor** user.
   
@@ -443,7 +451,7 @@ In this task, you use Access control (IAM) to assign role-based access control (
 
 In this task, you will add Access policies to the Azure Key Vault, to set the permissions of individual users within the key vault.
 
-1.  On the new key vault blade, select **Access Policies** from the left-hand menu under SETTINGS.
+1.  On the new key vault blade, under **Settings**, select **Access Policies** from the left-hand menu.
 
     ![Access policies is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image58.png "Access policies")
 
@@ -521,7 +529,7 @@ In this task, you will log in with the three different Azure AD user accounts yo
 
 10. In your InPrivate or Incognito browser window, logoff and login as the **KeyVaultDeveloper**.
 
-    >**Note**: You will need to reset the password for the account, as you did in [Exercise 1, Task 3, Step 13](#task-3-enable-azure-identity-protection-features).
+    >**Note**: If you did not record the password, you will need to reset the password for the account, as you did in [Exercise 1, Task 3, Step 13](#task-3-enable-azure-identity-protection-features).
 
     - Update the password, when prompted.
 
@@ -571,7 +579,7 @@ In this task, you will add two secrets to the key vault.
 
 1.  In your Incognito browser window, login as the **KeyVaultAdmin**.
 
-2.  Select **Key** **vaults**.
+2.  Select **Key vaults**.
 
 3.  Select your key vault.
 
@@ -617,7 +625,7 @@ In this task, you will run another ARM template using PowerShell to create a SQL
 
 1.  In your Azure Virtual machine, open a **Windows PowerShell ISE** window.
 
-2.  Open the extracted **\\Hands-on lab\\AzureTemplate\\deploy-securingpaas.ps1**.
+2.  Open the extracted **\\Hands-on lab\\AzureTemplate\\deploy-securingpaas.ps1** in PowerShell ISE and update it:
 
     a.  Review the file, note the following:
 
@@ -633,15 +641,15 @@ In this task, you will run another ARM template using PowerShell to create a SQL
 
     d.  Save the file.
 
-3.  Open the extracted **\\Hands-on lab\\AzureTemplate\\azure-kv-sql-deploy.json** file, review it.
+3.  Open the extracted **\\Hands-on lab\\AzureTemplate\\azure-kv-sql-deploy.json** file, and update it:
 
     a.  Notice that this file simply creates a virtual machine using the parameters passed in.
 
-    b.  **Update the SQL Server name parameter to something unique**.
+    b.  Update the **sqlServerName** parameter to something unique.
 
     c.  Save the file.
 
-4.  Open the extracted **\\Hands-on lab\\AzureTemplate\\azure-kv-parameters.json** file.
+4.  Open the extracted **\\Hands-on lab\\AzureTemplate\\azure-kv-parameters.json** file and update it:
 
     a.  Notice how it makes a reference to your Azure Key Vault and secret to populate the parameters.
 
@@ -657,7 +665,7 @@ In this task, you will run another ARM template using PowerShell to create a SQL
 
         ![The Azure Key Vault Resource ID field and the DNS Name field display.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image70.png "Azure Key Vault Resource ID")
 
-    -  Paste the **RESOURCE ID** in the parameters sections.
+    -  Paste the **RESOURCE ID** in the proper parameters sections.  Make sure you replace both instances:
 
         ![A JSON File displays with the resource ID line called out.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image71.png "JSON File")
 
@@ -672,7 +680,9 @@ In this task, you will run another ARM template using PowerShell to create a SQL
 
     ```
 
-6.  Login as your subscription/resource group admin when prompted.
+6.  If prompted, type **Y**, then login as your subscription/resource group admin when prompted.  If prompted, type **Y**.
+
+    ![A PowerShell window that displays the series of commands just entered.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image72.1.png "Azure Portal search results")
 
 7.  Switch to your Azure Portal, select **SQL Servers**. You should see a new SQL Server available that will be using the username and password values from your key vault:
 
@@ -756,13 +766,13 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
 
 19. Once completed, select **Close**.
 
-20. Ensure that the **master** database is selected.
+20. In **SSMS**, select **File-\>Open-\>File**.
+
+21. Browse to the extracted GitHub folder, select the **\\Hands-on lab\\Database\\00\_CreateLogin.ps1** file.
+
+22. Ensure that the **master** database is selected.
 
     ![In SQL Management Studio, master displays in the top toolbar drop-down field.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image83.png "SQL Management Studio")
-
-21. In **SSMS**, select **File-\>Open-\>File**.
-
-22. Browse to the extracted GitHub folder, select the **\\Hands-on lab\\Database\\00\_CreateLogin.ps1** file.
 
 23. **Press F5** to run the script to create a login called **store**.
 
@@ -784,7 +794,7 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
 
 2.  In the **Solution Explorer**, navigate to and double select the **web.config** file to open it.
 
-3.  In the web.config, locate the database connection string (line 72), and update the "data source" property to point to the **FourthCoffee** database created in Task 2. You should only need to update the server name to point to your Azure SQL Server.
+3.  In the **web.config**, locate the database connection string (line 72), and update the "data source" property to point to the **FourthCoffee** database created in Task 2. You should only need to update the server name to point to your Azure SQL Server.
 
     ![Screenshot of the FourthCoffeeEntities connection string in the Web.config file, with the data source component highlights.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image85.png "Database connection string")
 
@@ -818,7 +828,7 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
 
     c.  **Column**: Select **CreditCardNumber**.
 
-    d.  **Masking field format**: Select Credit card value (xxxx-xxxx-xxxx-1234).
+    d.  **Masking field format**: Select **Credit card value (xxxx-xxxx-xxxx-1234)**.
     
     ![Fields in the Add masking rule blade are set to the previously defined settings.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image88.png "Add masking rule")
 
@@ -887,8 +897,8 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
 21. For the encryption, select **Azure Key Vault**, in the dialog.
 
     ![In the Generate new encryption key section, under Select the key store provider, Azure Key Vault is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image94.png "Encryption key")
-.
-22. Select **Sign In**
+
+22. Select **Sign In**.
 
 23. Sign in with your Azure Portal credentials.
 
@@ -962,7 +972,7 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
 
 6.  Select **OK**.
 
-7.  Select **Save**.
+7.  Select **Save**, then select **OK**
 
 8.  In the **FourthCoffe** blade, select **Advanced Thread Protection**.
 
@@ -998,7 +1008,7 @@ Synopsis: In this exercise, attendees will learn how to migrate web application 
 
 3.  Select **Key Vaults**, then select your Azure Key Vault.
 
-4.  Select **Secrets**, then select **+Add**.
+4.  Select **Secrets**, then select **+Generate/Import**.
 
 5.  For the **Upload Options**, select **Manual**.
 
@@ -1019,6 +1029,9 @@ Synopsis: In this exercise, attendees will learn how to migrate web application 
     ![Under Version, the current version is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image106.png "Current Version")
 
 12. Copy and record the secret identifier URL for later use.
+
+    ![The secret identifier url is copied.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image106.1.png "Current Version")
+
 
 ### Task 2: Create an Azure Active Directory application
 
@@ -1090,9 +1103,13 @@ Synopsis: In this exercise, attendees will learn how to migrate web application 
 
 3.  In the new window that opens, run the following commands (NOTE that these already exist in the project but are provided as a reference):
 
-    a.  Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.16.204221202.
+```PowerShell
+    Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.16.204221202.
 
-    b.  Install-Package Microsoft.Azure.KeyVault.
+    Install-Package Microsoft.Azure.KeyVault.
+
+    Update-Package -Reinstall
+```
 
 4.  From **Solution Explorer**, double-select the **web.config** file to open it.
 
@@ -1102,7 +1119,7 @@ Synopsis: In this exercise, attendees will learn how to migrate web application 
 
 6.  Replace the values as follows:
 
-    a.  **ClientId**: Replace with the Application ID value copied in Task 2, Step 7. and **C**.
+    a.  **ClientId**: Replace with the Application ID value copied in Task 2, Step 7.
 
     b.  **CllientSecret**: Replace with the FourthCoffeeAPI Key values from copied in Task 2, Step 14.
 
@@ -1126,7 +1143,7 @@ Synopsis: In this exercise, attendees will learn how to migrate web application 
 
     ![In the global.asax.cs file, the EncryptSecret = sec.Value line is called out.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image115.png "global.asax.cs file")
 
-6.  Press **F5**, and navigate to [http://localhost:\[PORT-NUMBER\]/api/CustomerAccounts](http://localhost:[PORT-NUMBER]/api/CustomerAccounts), you should see your data displayed.
+6.  Press **F5**, and navigate to [http://localhost:\[PORT-NUMBER\]/api/CustomerAccounts](http://localhost:[PORT-NUMBER]/api/CustomerAccounts), you should see your data displayed (again note that some browsers may not display the json file in the browser).
 
 ## Exercise 6: Securing PaaS web applications with App Service Environment and Web Application Firewall 
 
@@ -1136,7 +1153,7 @@ Synopsis: In this exercise, attendees will deploy a cloud web application with a
 
 ### Task 1: Deploy web application to App Service Environment
 
-1.  Search for and select **App Service Plans**.
+1.  Search for and select **App Service Plan**.
 
     ![In the Azure Portal search field, app service pla is typed. Under the search results, App Service plans is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image116.png "Azure Portal")
 
@@ -1162,9 +1179,9 @@ Synopsis: In this exercise, attendees will deploy a cloud web application with a
 
     >**Note**: You cannot publish from outside the Azure Virtual Network to an internal ASE.
 
-10. Open the extracted folder **\\Hands-on lab\\WebApp\\FourthCoffeeWeb.sln**.
+10. Open the extracted folder solution **\\Hands-on lab\\WebApp\\FourthCoffeeWeb.sln**.
 
-    >**Note**: You will need to provide an authorized MSDN Visual Studio licensed user.
+    >**Note**: If the project does not load, remove the project file and open the folder as an **Existing web site**.
 
     a.  Select **Sign in**, enter your username, select **Next**.
 
@@ -1212,17 +1229,19 @@ Synopsis: In this exercise, attendees will deploy a cloud web application with a
 
     f.  On your jump VM, open **Notepad as an administrator**.
 
-    g.  Open the c:\\windows\\system32\\drivers\\etc\\hosts file, add the url you copied from the publish window above:
+    g.  Open the **c:\\windows\\system32\\drivers\\etc\\hosts** file, add the url you copied from the publish window above, save the hosts file.
 
     ![The Fourthcoffeeweb host entry data to be added displays.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image123.png "Hosts file")
 
-21. Select **Validate Connection**, if prompted, select **Accept** for the certificate:
+21. Switch back to Visual Studio, select **Validate Connection**, if prompted, select **Accept** for the certificate:
 
     ![A Certificate Error pop-up displays with the message that the security certificate was issued to a different server.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image124.png "Certificate Error pop-up")
 
 22. The connection should validate with a green checkmark:
 
-    ![Below the destination URL, next to the the Validation Connection button is a green checkmark, indicating that the connection was validated.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image125.png "Validation Connection")
+>**Note**: You may need to click it twice.
+
+   ![Below the destination URL, next to the the Validation Connection button is a green checkmark, indicating that the connection was validated.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image125.png "Validation Connection")
 
 23. Record the destination URL for later in this exercise.
 
@@ -1272,7 +1291,7 @@ Synopsis: In this exercise, attendees will deploy a cloud web application with a
 
 11. Select **HTTP settings**.
 
-12. Select the only **backendHttpSetting**.
+12. Select the only **backendHttpSetting** item.
 
 13. Check the **Use custom probe** checkbox.
 
@@ -1318,7 +1337,7 @@ Synopsis: In this exercise, attendees will deploy a cloud web application with a
 
 4.  Open a browser window, ensure that the web site opens successfully.
 
-5.  Launch Fiddler on your jump VM, so you can observe the network traffic resulting from the following step.
+5.  **Launch Fiddler** on your jump VM, so you can observe the network traffic resulting from the following step.
 
 6.  Open a **Windows PowerShell ISE** window.
 
@@ -1332,7 +1351,13 @@ Synopsis: In this exercise, attendees will deploy a cloud web application with a
 
     ![A script displays in the Windows PowerShell ISE window.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image136.png "Windows PowerShell ISE window")
 
-9.  The script will execute a series of attacks on the Azure web application. Although they won't technically be successful, they will make it to the web application. In Fiddler, select the various request and then click the **Inspectors** tab.  You will be able to see the traffic is allowed, even known bad agents:
+>**Note**:  You may need to change the execution policy:
+
+```PowerShell
+    Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+```
+
+9.  The script will execute a series of attacks on the Azure web application. Although they won't technically be successful, they will make it to the web application. In Fiddler, select the various request and then click the **Inspectors** tab.  You will be able to see the traffic is allowed, even wotj known bad agents:
 
     ![One of the attacks is selected on the left, and the User-agent stalker is called out on the right.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image137.png "Attack examples")
 
@@ -1346,9 +1371,11 @@ Synopsis: In this exercise, attendees will deploy a cloud web application with a
 
 4.  For **Firewall mode**, select the **Prevention**.
 
+5.  For **File upload limit (MB)**, select the **100**.
+
     ![In the Application gateway blade, under Settings, Web application firewall is selected. Prevention is selected for Firewall mode.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image138.png "Application gateway blade")
 
-5.  Select **Save**, wait for the application gateway to be updated.
+6.  Select **Save**, wait for the application gateway to be updated.
 
 ### Task 6: Reattack an ASE Web Application with Prevention enabled
 
@@ -1372,7 +1399,7 @@ Synopsis: In this exercise, attendees will learn how to use Azure Functions that
 
 ### Task 1: Create an Azure Function
 
-1.  Open the Azure Function App creation page (<https://portal.azure.com/#create/Microsoft.FunctionApp>).
+1.  Click **+Create a resource**, then type "function".  Select **Function App**, then select **Create**
 
 2.  For the name, enter **MSIKeyVaultFunc-\[Your Initials\]**.
 
@@ -1382,7 +1409,7 @@ Synopsis: In this exercise, attendees will learn how to use Azure Functions that
 
 5.  For **Storage**, select the storage account.
 
-6.  Select an **Application Insights Location**.
+6.  Select **Application Insights**, select **Enabled**, then select **Apply**.
 
 7.  Select **Create**.
 
@@ -1400,35 +1427,33 @@ Synopsis: In this exercise, attendees will learn how to use Azure Functions that
 
     ![Under Choose a template, the HTTP trigger tile is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image141.png "Choose a template section")
 
-13. For the **language** select **C\#**.
-
-14. Keep the name **HttpTriggerCSharp1**.
+13. Keep the name **HttpTrigger1**.
 
     ![Under Few Function, fields are set to the previously defined settings.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image142.png "New Function section")
 
-15. Select **Create**.
+14. Select **Create**.
 
-16. Open the extracted folder file **\\Hands-on lab\\AzureFunction\\run.csx**.
+15. Open the extracted folder file **\\Hands-on lab\\AzureFunction\\run.csx**.
 
-17. Copy the contents into the window.
+16. Copy the contents into the window.
 
     ![The Save button is selected in the run.csx window.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image143.png "run.csx window")
 
-18. Select **Save**.
+17. Select **Save**.
 
-19. Select **View Files**.
+18. On the right, select **View Files**.
 
     >**Note**: You may need to scroll to the right to see the View Files tab.
 
-20. Select **+Add**.
+19. Select **+Add**.
 
-21. For the name, enter **project.json**.
+20. For the name, enter **project.json**.
 
     ![Screenshot of the Add button and the project.json file icon.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image144.png "Add button")
 
-22. Press **Enter**.
+21. Press **Enter**.
 
-23. Open the **\\Hands-on lab\\AzureFunction\\project.json** file, copy the contents to the online version.
+22. Open the **\\Hands-on lab\\AzureFunction\\project.json** file, copy the contents to the online version.
 
 24. Select **Save**.
 
@@ -1440,15 +1465,15 @@ Synopsis: In this exercise, attendees will learn how to use Azure Functions that
 
     ![In the Function apps blade, the Platform features tab is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image145.png "Function apps blade")
 
-3.  Under **Networking**, select **Managed service identity**.
+3.  Under **Networking**, select **Identity**.
 
     ![Under Networking, Managed service identity is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image146.png "Networking section")
 
-4.  For the **Register with Azure Active Directory** setting, toggle it to **On**.
+4.  For the **Status** setting, toggle it to **On**.
 
     ![In the Managed service identity pop-up, Register with Azure Active Directory is set to On.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image147.png "Managed service identity pop-up")
 
-5.  Select **Save**.
+5.  Select **Save**, in the popup, select **Yes**
 
 ### Task 3: Assign Managed Service Identity Azure Key Vault permissions
 
@@ -1522,7 +1547,7 @@ Synopsis: In this exercise, attendees will learn how to use Azure Functions that
 
 16. Scroll to the top, select **Save**.
 
-17. Select the **HttpTriggerCSharp1** function.
+17. Select the **HttpTrigger1** function.
 
 18. Select **Run**.
 
@@ -1540,15 +1565,11 @@ Synopsis: In this exercise, attendees will learn to utilize the Log Analytics fe
 
 ### Task 1: Export a Power Query formula from Log Analytics
 
-1.  Select **Monitor**, then select **Log Analytics**.
+1.  Select **Monitor**, then select **Logs**.
 
     ![In the Azure Portal, Monitor and Log Analytics are both selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image157.png "Azure Portal")
 
-2.  Select **All collected data**.
-
-    ![In Log Analytics, under A few more queries to try, All collected data is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image158.png "Log Analytics")
-
-3.  Update the search textbox to be:
+2.  In the query textbox, update the search textbox to be:
 
 ``` 
 search * | where Type == "SecurityDetection**.**"
@@ -1558,7 +1579,7 @@ search * | where Type == "SecurityDetection**.**"
 
 4.  Select the **Run** button.
 
-5.  In the **Log Search** dialog, select the **Power BI** link.
+5.  In the search dialog, select the **Export** link, then select **Export to Power BI (M Query)**
 
     ![In the Log Search dialog box, the PowerBI link is selected.](images/Hands-onlabstep-bystep-SecuringPaaSimages/media/image159.png "Log Search dialog box")
 

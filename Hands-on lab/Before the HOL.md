@@ -10,7 +10,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-August 2018
+December 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -168,6 +168,8 @@ In this task, you will log into the lab VM that was created by the ARM template 
     ![The passsecurity-vm-jump option is selected.](images/Setup/image11.png "passsecurity-vm-jump option")
 
     -   Select **Connect**.
+    
+        >**Note**:  Ensure the status is **Running**.  It could take up to 10 minutes for the Virtual machine to provision.
 
     ![In the Virtual machine blade, Connect is selected.](images/Setup/image12.png "Virtual machine blade")
 
@@ -181,11 +183,11 @@ In this task, you will log into the lab VM that was created by the ARM template 
 
 2.  Once logged in, launch the Server Manager. This should start automatically, but you can access it via the Start menu if it does not start.
 
-3.  Select Local Server, the select On next to IE Enhanced Security Configuration.
+3.  Select **Local Server**, if the **IE Enchanced Security Configuration** setting displays **On** then select **On**.
 
     ![Local Server is selected and highlighted on the left side of Server Manager, and at right, IE Enhanced Security Configuration On is highlighted under Properties For LabVM.](images/Setup/image14.png "Select IE Enhanced Security Configuration")
 
-1.  In the Internet Explorer Enhanced Security Configuration dialog, select Off under Administrators, then select OK.
+    -   In the Internet Explorer Enhanced Security Configuration dialog, select **Off** under Administrators, then select **OK**.
 
     ![Off is selected under Administrators in the Internet Explorer Enhanced Security Configuration dialog box.](images/Setup/image15.png "Disable Administrators")
 
@@ -199,7 +201,7 @@ In this task, you will install SQL Server Management Studio (SSMS) on your Jump 
 
 1.  On your jump machine VM, open a web browser and navigate to <https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms>.
 
-2.  Select Download SQL Server Management Studio 17.x.
+2.  Select **Download SQL Server Management Studio 17.x**.
 
     ![On the SQL Server Management Studio download page, the Download SQL Server Management Studio 17.x link is highlighted.](images/Setup/image16.png "SSMS Download screen")
 
@@ -231,29 +233,31 @@ Below, you will install Power BI on the jump VM, which will be used in Exercise 
 
 1.  In a web browser on you jump VM navigate to the Power BI Desktop download page (<https://powerbi.microsoft.com/en-us/desktop/>).
 
-2.  Select the **Download Free** link in the middle of the page.
+2.  Select the **Advanced Download Options** link in the middle of the page.
 
   ![The Power BI Desktop download screen is displayed, and Download Free is selected.](images/Setup/image19.png "Power BI Desktop download screen")
 
-3.  Run the installer.
+3.  Select the **Advanced Download Options** link in the middle of the page, then check the **Download** button.
 
-4.  Select **Next** on the welcome screen.
+4.  Select **PBIDesktop_x64.msi**, then click **Run** to start the installer.
+
+5.  Select **Next** on the welcome screen.
 
   ![The Welcome screen of the Power BI installer is displayed, with the Next button highlighted and selected.](images/Setup/image20.png "Power BI Desktop installer welcome screen")
 
-5.  Accept the license agreement, and select **Next**.
+6.  Accept the license agreement, and select **Next**.
 
    ![Screenshot of the Power BI Desktop Software License Terms screen is displayed, with the \"I accept the terms in the License Agreement\" checkbox checked, and the Next button selected.](images/Setup/image21.png "Power BI Desktop installer license terms screen")
 
-6.  Leave the default destination folder, and select **Next**.
+7.  Leave the default destination folder, and select **Next**.
 
   ![Screenshot of the Microsoft Power BI installer\'s Destination Folder screen, with the default path displayed, and the Next button highlighted.](images/Setup/image22.png "Power BI Desktop installer destination folder screen")
 
-7.  Make sure the Create a desktop shortcut box is checked, and select **Install**.
+8.  Make sure the Create a desktop shortcut box is checked, and select **Install**.
 
    ![Screenshot of the Microsoft Power BI installer\'s Ready to Install screen, with the \"Create a desktop shortcut\" checkbox checked, and the Install button highlighted.](images/Setup/image23.png "Power BI Desktop installer ready to install screen")
 
-8.  Uncheck **Launch Microsoft Power BI Desktop**, and select **Finish**.
+9.  Uncheck **Launch Microsoft Power BI Desktop**, and select **Finish**.
 
    ![The Completed the Microsoft Power BI Desktop screen is displayed, with the \"Launch Microsoft Power BI Desktop\" checkbox unchecked, and the Finish button highlighted.](images/Setup/image24.png "Power BI Desktop installer complete screen")
 
