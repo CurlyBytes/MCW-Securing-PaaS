@@ -7,5 +7,3 @@
 
 [HOL step-by step - Securing PaaS.html](https://cloudworkshop.blob.core.windows.net/securing-paas/Hands-on%20lab/HOL%20step-by%20step%20-%20Securing%20PaaS.html)
 
-[HOL unguided - Securing PaaS.html](https://cloudworkshop.blob.core.windows.net/securing-paas/Hands-on%20lab/HOL%20unguided%20-%20Securing%20PaaS.html)
-
