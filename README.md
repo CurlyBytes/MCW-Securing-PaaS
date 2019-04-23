@@ -1,5 +1,7 @@
 # Securing PaaS
 
+## This workshop is no longer being maintained and will be archived on June 28, 2019.
+
 Fourth Coffee is an American coffeehouse chain that was founded in Seattle, Washington in 1970. It currently operates over 20,000 locations worldwide.
 
 The CEO has established a mandate to revamp their loyalty program that starts with their platform. Other than tracking the serial number of the gift card, its balance and purchase history, Fourth Coffee does not have any direct way to associate the purchase history with the customer. They feel this is a big opportunity for them to address, and in doing so will enable them to launch their worldwide customer loyalty program.
