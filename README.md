@@ -1,6 +1,6 @@
 # Securing PaaS
 
-## This workshop is no longer being maintained and will be archived on June 28, 2019.
+## This workshop is archived and is no longer being maintained. Content is read-only.
 
 Fourth Coffee is an American coffeehouse chain that was founded in Seattle, Washington in 1970. It currently operates over 20,000 locations worldwide.
 
@@ -54,10 +54,6 @@ At the end of this hands-on lab, you will be better able to develop a secure sol
 - SQL Database
 - Azure Storage
 
-## Azure solutions
-
-Security and Management
-
 ## Related references
-- [MCW](https://github.com/Microsoft/MCW)
+- [Mircosoft Cloud Workshop](https://microsoftcloudworkshop.com/index.html)
 
